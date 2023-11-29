@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>Ecommerce</title>
+        <link href="ecommerce.css" rel="stylesheet" type="text/css"/>
+        <link href="utils.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+    </style>
+    <body>
+        <header class="container">
+            <nav class="flex space-between ">
+                <div class="left flex items-center">
+                    <img src="feather-solid.svg"/>
+                    <ul class="flex items-center justify-center uppercase bold">
+                        <li><a href="Men.html">Men</a></li>
+                        <li><a href="women.html">Women</a></li>
+                        <li><a href="kids.html">Kids</a></li>
+                        <li><a href="living.html">Home and Living</a></li>
+                    </ul>
+
+                </div>
+                <div class="right flex">
+                    <img src="magnify.svg"/>
+                    <div class="m3"><input  placeholder="Search for products, brands and more" class="search"/></div>
+                    <img src="user.svg"/><div class="profile margine">Profile</div>
+                    <img src="heart.svg"/><div class="wishlist margine">Wishlist</div>
+                    <a href="mycart.html"><img src="cart.svg"/><div class="cart margine">Cart</a></div>
+                </div>
+            </nav>
+        </header>
+       
+        <div id="cart">
+            
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items"></ul>
+            <p>Total: Rs.<span id="cart-total">0.00</span></p>
+        </div>
+        <button class="clear" id="clear-cart-button">Clear Cart</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+        
+            function updateCartDisplay() {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cartItemsContainer.innerHTML = '';
+                let total = 0;
+        
+                cart.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${item.name} - Rs ${item.price.toFixed(2)}`;
+                    cartItemsContainer.appendChild(listItem);
+        
+                    total += item.price;
+                });
+        
+                cartTotal.textContent = total.toFixed(2);
+            }
+        
+            function clearCart() {
+                localStorage.removeItem('cart');
+                updateCartDisplay(); 
+            }
+        
+            updateCartDisplay();
+                const clearCartButton = document.getElementById('clear-cart-button');
+            if (clearCartButton) {
+                clearCartButton.addEventListener('click', clearCart);
+            }
+        });
+    </script>     
+</body>
+    <footer>
+        Copyright &copy; comfort.com | All rights reserved
+    </footer>
+</html>

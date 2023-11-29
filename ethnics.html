@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>Ecommerce</title>
+        <link href="ecommerce.css" rel="stylesheet" type="text/css"/>
+        <link href="utils.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header class="container">
+            <nav class="flex space-between ">
+                <div class="left flex items-center">
+                    <img src="feather-solid.svg"/>
+                    <ul class="flex items-center justify-center uppercase bold">
+                        <li><a href="Men.html">Men</a></li>
+                        <li><a href="women.html">Women</a></li>
+                        <li><a href="kids.html">Kids</a></li>
+                        <li><a href="living.html">Home and Living</a></li>
+                    </ul>
+
+                </div>
+                <div class="right flex">
+                    <img src="magnify.svg"/>
+                    <div class="m3"><input  placeholder="Search for products, brands and more" class="search"/></div>
+                    <img src="user.svg"/><div class="profile margine">Profile</div>
+                    <img src="heart.svg"/><div class="wishlist margine">Wishlist</div>
+                    <a href="mycart.html"><img src="cart.svg"/><div class="cart margine">Cart</a></div>
+                </div>
+            </nav>
+        </header>
+        <section class="container section1">
+            <img class="home" src="kurta.jpg"/>
+        </section>
+        <section class="container section1 flex flex-wrap">
+            <table border="0" cellspacing="70" >
+            <tr >
+          <td class="table"> <img class="item" src="kurta1.avif"/><p>Pink flared suit<br>Rs.799</p>
+            <div class="product" data-id="1" data-name="Pink flared suit" data-price="799.00">
+                <button class="add-to-cart" >Add to Cart</button></a></div></td> 
+          <td class="table"> <img class="item" src="kurta2.webp"/><p>Blue Plane Kurta Top<br>Rs.599</p>
+            <div class="product" data-id="1" data-name="Blue Plane Kurta Top" data-price="599.00">
+            <button class="add-to-cart" >Add to Cart</button></a></div></td> 
+</td> 
+          <td class="table">  <img class="item" src="kurta3.webp"/><p>Red palne Gown<br>Rs.2999</p>
+            <div class="product" data-id="1" data-name="Red palne Gown" data-price="2999.00">
+            <button class="add-to-cart" >Add to Cart</button></a></div></td> 
+</td> 
+          <td class="table"> <img class="item" src="kurta4.avif"/><p>Blue Salwar Set<br>Rs.1099</p>
+            <div class="product" data-id="1" data-name="Blue Salwar Set" data-price="1099.00">
+            <button class="add-to-cart" >Add to Cart</button></a></div></td> 
+</td> 
+        </tr>
+        <tr>
+            <td class="table">  <img class="item" src="kurta5.webp"/><p>White Chikankari Suit<br>Rs.1999</p>
+                <div class="product" data-id="1" data-name="White Chikankari Suit" data-price="1999.00">
+                <button class="add-to-cart" >Add to Cart</button></a></div></td> 
+</td> 
+            <td class="table">  <img class="item" src="kurta6.avif"/><p>White Chikankari Suit with shawl<br>Rs.2299</p>
+                <div class="product" data-id="1" data-name="White Chikankari Suit with shawl" data-price="2299.00">
+                <button class="add-to-cart" >Add to Cart</button></a></div></td> 
+</td>
+            <td class="table">  <img class="item" src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/3/f/tr:w-250,/3fca4f5YGAJRA00003589_1.jpg?rnd=20200526195200"/><p>Rani Pink shifon saree<br>Rs.2500</p>
+                <div class="product" data-id="1" data-name="Rani Pink shifon saree" data-price="2500.00">
+                <button class="add-to-cart" >Add to Cart</button></a></div></td> 
+</td>
+            <td class="table">  <img class="item" src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/a/4/tr:w-250,/a4da388NY_FMNJK000719_2.jpg"/><p>Red and orange color silk Saree<br>Rs.4920</p>
+                <div class="product" data-id="1" data-name="Red and orange color silk Saree" data-price="4920.00">
+                    <button class="add-to-cart" >Add to Cart</button></a></div></td> 
+    </td>
+        </tr> 
+    </table>
+        </section>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const product = button.parentElement;
+            const productId = product.dataset.id;
+            const productName = product.dataset.name;
+            const productPrice = parseFloat(product.dataset.price);
+
+            addToCart(productId, productName, productPrice);
+        });
+    });
+
+    function addToCart(id, name, price) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push({ id, name, price });
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+});
+
+        </script>
+        <footer>
+            Copyright &copy; comfort.com | All rights reserved
+           </footer>

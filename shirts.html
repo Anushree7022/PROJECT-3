@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>Ecommerce</title>
+        <link href="ecommerce.css" rel="stylesheet" type="text/css"/>
+        <link href="utils.css" rel="stylesheet" type="text/css"/>
+        
+
+    </head>
+    <body>
+        <header class="container">
+            <nav class="flex space-between ">
+                <div class="left flex items-center">
+                    <img src="feather-solid.svg"/>
+                    <ul class="flex items-center justify-center uppercase bold">
+                        <li><a href="Men.html">Men</a></li>
+                        <li><a href="women.html">Women</a></li>
+                        <li><a href="kids.html">Kids</a></li>
+                        <li><a href="living.html">Home and Living</a></li>
+                    </ul>
+
+                </div>
+                <div class="right flex">
+                    <img src="magnify.svg"/>
+                 <div class="m3"><input  placeholder="Search for products, brands and more" class="search"/></div>
+                    <img src="user.svg"/><div class="profile margine">Profile</div>
+                    <img src="heart.svg"/><div class="wishlist margine">Wishlist</div>
+                    <a href="mycart.html">  <img src="cart.svg"/><div class="cart margine">Cart</a></div>
+                </div>
+            </nav>
+        </header>
+        <section class="container section1">
+            
+            <img class="home" src="https://assets.ajio.com/cms/AJIO/WEB/D-1.0-MHP-27102023-bestofbrands-z10-snitch-flat50.jpg"/>
+            <img class="home" src="https://assets.ajio.com/cms/AJIO/WEB/MicrosoftTeams-image-fdjfdngklfdg.png"/>
+        </section>
+        <section class="container section1 flex flex-wrap">
+            <table  border="0" cellspacing="70" >
+                <tr>
+        <td class="table"><img class="item" src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/3/1/tr:w-250,/319d3beWMSH004517_1.jpg?rnd=20200526195200"/><p>Casual grey shirt<br>Rs.599</p>   
+            <div class="product" data-id="1" data-name="Casual grey shirt" data-price="599.00">
+                <button class="add-to-cart" >Add to Cart</button></a></div>
+                
+         </td> 
+   
+        <td class="table"><img class="item" src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/5/e/tr:w-250,/5ec73beWMSH004527_1.jpg?rnd=20200526195200"/><p>Caual office wear<br>Rs.699</p>
+            <div class="product" data-id="1" data-name="Casual office wear" data-price="699.00">
+                <button class="add-to-cart" >Add to Cart</button></a></div>
+               </td> 
+        
+        <td class="table"><img class="item" src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/9/6/tr:w-250,/96d8d02904351_2.jpg"/><p>Round neck yellow T-shirt<br>Rs.359</p>
+            <div class="product" data-id="1" data-name="Round neck yellow T-shirt" data-price="359.00">
+                <button class="add-to-cart" >Add to Cart</button></a></div>
+               </td> </td> 
+        <td class="table" ><img class="item" src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/8/7/tr:w-250,/8791af8KL_THECB00023129_3.jpg"/><p>White oversized T-shirt<br>Rs.750</p>
+            <div class="product" data-id="1" data-name="White oversized T-shirt" data-price="750.00">
+            <button class="add-to-cart" >Add to Cart</button></a></div>
+</td> 
+        </tr>
+        <tr>
+            <td class="table"><img class="item" src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/1/1/tr:w-250,/117c716230320501_1.jpg?rnd=20200526195200"/><p>High neck full hand T-shirt<br>Rs.660</p>
+                <div class="product" data-id="1" data-name="High neck full hand T-shirt" data-price="660.00">
+                    <button class="add-to-cart" >Add to Cart</button></a></div>
+    </td> 
+            <td class="table"><img class="item" src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/a/8/tr:w-250,/a866838NK_BULLM00010478_1.jpg?rnd=20200526195200"/><p>Brown front and back printed T-shirt<br>Rs.450</p>
+                <div class="product" data-id="1" data-name="Brown front and back printed T-shirt" data-price="450.00">
+                    <button class="add-to-cart" >Add to Cart</button></a></div>
+    </td> 
+            <td class="table"><img class="item" src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/5/e/tr:w-250,/5eee327MTSH00183_DKNAVY_2.jpg"/><p>Black collered T-shirt<br>Rs.570</p>
+                <div class="product" data-id="1" data-name="Black collered T-shirt" data-price="570.00">
+                    <button class="add-to-cart" >Add to Cart</button></a></div>
+    </td> 
+            <td class="table"><img class="item" src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/5/f/tr:w-250,/5f14f1fTBH-REPOS-GY_1.jpg?rnd=20200526195200"/><p>Men's checked flannel shirt<br>Rs.1399</p>
+                <div class="product" data-id="1" data-name="Men's checked flannel shirt" data-price="1399.00">
+                    <button class="add-to-cart" >Add to Cart</button></a></div>
+    </td> 
+        </tr>
+        </table>
+        </section>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const product = button.parentElement;
+            const productId = product.dataset.id;
+            const productName = product.dataset.name;
+            const productPrice = parseFloat(product.dataset.price);
+
+            addToCart(productId, productName, productPrice);
+        });
+    });
+
+    function addToCart(id, name, price) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push({ id, name, price });
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+});
+
+        </script>
+        <footer>
+            Copyright &copy; comfort.com | All rights reserved
+           </footer>

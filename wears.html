@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>Ecommerce</title>
+        <link href="ecommerce.css" rel="stylesheet" type="text/css"/>
+        <link href="utils.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header class="container">
+            <nav class="flex space-between ">
+                <div class="left flex items-center">
+                    <img src="feather-solid.svg"/>
+                    <ul class="flex items-center justify-center uppercase bold">
+                        <li><a href="Men.html">Men</a></li>
+                        <li><a href="women.html">Women</a></li>
+                        <li><a href="kids.html">Kids</a></li>
+                        <li><a href="living.html">Home and Living</a></li>
+                    </ul>
+
+                </div>
+                <div class="right flex">
+                    <img src="magnify.svg"/>
+                    <div class="m3"><input  placeholder="Search for products, brands and more" class="search"/></div>
+                    <img src="user.svg"/><div class="profile margine">Profile</div>
+                    <img src="heart.svg"/><div class="wishlist margine">Wishlist</div>
+                    <a href="mycart.html"><img src="cart.svg"/><div class="cart margine">Cart</a></div>
+                </div>
+            </nav>
+        </header>
+        <section class="container section1">
+            <img class="home" src="https://assets.ajio.com/cms/AJIO/WEB/D-1.0-UHP-24112023-BlackFridaySalegolive-Topbanner.gif"/>
+        </section>
+        <section class="container section1 flex flex-wrap">
+            <table border="0" cellspacing="70" >
+                <tr>
+          <td class="table">  <img class="item" src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/8/c/tr:w-250,/8ce8ad3KW3896AW22MRN-TEAL_1.jpg?rnd=20200526195200"/><p>Girls lehenga<br>Rs.1100</p>
+            <div class="product" data-id="1" data-name="Girls lehenga" data-price="1100.00">
+                <button class="add-to-cart" >Add to Cart</button></a></div></td>
+          <td class="table">   <img class="item" src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/b/7/tr:w-250,/b7870eeKW4800AW22BLUSHPNK_1.jpg?rnd=20200526195200"/><p>Peach colored Kurta<br>Rs.780</p>
+            <div class="product" data-id="1" data-name="Peach colored Kurta" data-price="780.00">
+                <button class="add-to-cart" >Add to Cart</button></a></div></td>
+          <td class="table">  <img class="item" src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/p/d/tr:w-250,/pd-52a-1.jpg?rnd=20200526195200"/><p>Maroon solid Dungaree<br>Rs.1292</p>
+            <div class="product" data-id="1" data-name="Maroon solid Dungaree" data-price="1292.00">
+                <button class="add-to-cart" >Add to Cart</button></a></div></td>
+          <td class="table">  <img class="item" src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/a/b/tr:w-250,/abac13b7064-BLACK_1.jpg?rnd=20200526195200"/><p>Kids polyster blend sherwani<br>Rs.1600</p>
+            <div class="product" data-id="1" data-name="Kids polyster blend sherwani" data-price="1600.00">
+                <button class="add-to-cart" >Add to Cart</button></a></div></td>
+        </tr>
+        <tr>
+        <td class="table">   <img class="item" src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/5/c/tr:w-250,/5cf5b19PCF25_1.jpg?rnd=20200526195200"/><p>Layers party dress<br>Rs.1500</p>
+            <div class="product" data-id="1" data-name="Layers party dress" data-price="1500.00">
+                <button class="add-to-cart" >Add to Cart</button></a></div></td>
+        <td class="table">   <img class="item" src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/c/d/tr:w-250,/cd19609KW-8632_1.jpg?rnd=20200526195200"/><p>Mint green & white baby dress<br>Rs.853</p>
+            <div class="product" data-id="1" data-name="Mint green & white baby dress" data-price="853.00">
+                <button class="add-to-cart" >Add to Cart</button></a></div></td>
+        <td class="table"> <img class="item" src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/7/a/tr:w-250,/7a0024eVASGLC041PH_1.jpg?rnd=20200526195200"/><p>Peech kurta with lehenga<br>Rs.1496</p>
+            <div class="product" data-id="1" data-name="Peech kurta with lehenga" data-price="1100.00">
+                <button class="add-to-cart" >Add to Cart</button></a></div></td> 
+        <td class="table"> <img class="item" src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/5/2/tr:w-250,/5259137JM-G40_4.jpg"/><p>Girls purple Musleen long dress<br>Rs.2813</p>
+            <div class="product" data-id="1" data-name="Girls purple Musleen long dress" data-price="2813.00">
+                <button class="add-to-cart" >Add to Cart</button></a></div></td> 
+    </tr>    
+    </table>
+        </section>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const product = button.parentElement;
+            const productId = product.dataset.id;
+            const productName = product.dataset.name;
+            const productPrice = parseFloat(product.dataset.price);
+
+            addToCart(productId, productName, productPrice);
+        });
+    });
+
+    function addToCart(id, name, price) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push({ id, name, price });
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+});
+
+        </script>
+        <footer>
+            Copyright &copy; comfort.com | All rights reserved
+           </footer>
